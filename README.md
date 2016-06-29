@@ -41,7 +41,7 @@ This command will generate:
 ```
 database/migrations/2016_06_18_171537_create_articles_table.php
 app/Http/Controllers/ArticlesController.php
-app/Article.php
+app/Models/Article.php
 resources/views/articles/create.blade.php
 resources/views/articles/edit.blade.php
 resources/views/articles/form.blade.php
