@@ -181,6 +181,9 @@ class MakeScaffoldCommand extends Command
 
     private function generateModel($attributes)
     {
+        if(!is_dir('app/Models'))
+            mkdir('app/Models');
+
         $stub = file_get_contents($this->path . 'ModelStub.php');
         $stub = str_replace('{{capSingle}}', $this->Model, $stub);
         $stub = str_replace('{{field_names}}', $this->field_names, $stub);
