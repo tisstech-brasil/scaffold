@@ -1,6 +1,6 @@
 <?php
 
-namespace Amcysoft\Scaffold\Commands;
+namespace TisstechBrasil\Scaffold\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
@@ -69,7 +69,7 @@ class MakeScaffoldCommand extends Command
         $entity = $this->argument('entity');
 
         $attributes = $this->validateAndSetNames($entity, $arguments);
-        
+
         $this->info("Generating Schema ...");
         $this->generateSchema($attributes);
 
@@ -184,8 +184,18 @@ class MakeScaffoldCommand extends Command
         $stub = file_get_contents($this->path . 'ModelStub.php');
         $stub = str_replace('{{capSingle}}', $this->Model, $stub);
         $stub = str_replace('{{field_names}}', $this->field_names, $stub);
-        file_put_contents('app/'.$this->Model.'.php', $stub);
-        $this->info('Generated Model: app/'.$this->Model.'.php');
+        file_put_contents('app/Models/'.$this->Model.'.php', $stub);
+        $this->info('Generated Model: app/Models/'.$this->Model.'.php');
+    }
+
+    private function generateRequest($attributes)
+    {
+        $stub = file_get_contents($this->path . 'RequestStub.php');
+        $stub = str_replace('{{capSingle}}', $this->Model, $stub);
+        $stub = str_replace('{{capPlural}}', $this->Models, $stub);
+        $stub = str_replace('{{field_names}}', $this->field_names, $stub);
+        file_put_contents('app/Http/Requests/'.$this->Models.'/'.$this->Model.'Request.php', $stub);
+        $this->info('Generated Request: app/Http/Requests/'.$this->Models.'/'.$this->Model.'Request.php');
     }
 
     private function generateViews($attributes)

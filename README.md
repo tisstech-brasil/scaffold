@@ -3,14 +3,14 @@
 
 Hi, this is a scaffold generator for Laravel 5.2 with bootstrap 3 template.
 
-
+## Forked [amcysoft/scaffold](http://github.com/amcysoft/scaffold)
 
 ## Usage
 
 ### Step 1: Install Through Composer
 
 ```
-composer require 'amcysoft/scaffold' "@dev"
+composer require 'tisstech-brasil/scaffold' "@dev"
 ```
 
 ### Step 2: Add the Service Provider
@@ -18,7 +18,7 @@ composer require 'amcysoft/scaffold' "@dev"
 Open `config/app.php` and the following to your **providers** array, add:
 
 ```
-Amcysoft\Scaffold\ScaffoldServiceProvider::class,
+TisstechBrasil\Scaffold\ScaffoldServiceProvider::class,
 ```
 
 ### Step 3: Run Artisan!

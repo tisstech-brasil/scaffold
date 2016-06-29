@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\{{capSingle}};
+use App\Models\{{capSingle}};
 
 class {{capPlural}}Controller extends Controller
 {
@@ -38,7 +38,6 @@ class {{capPlural}}Controller extends Controller
     public function store(Request $request)
     {
         {{capSingle}}::create($request->all());
-        flash()->success('{{capSingle}} has been created successfully.');
         return redirect('{{smallPlural}}');
     }
 
@@ -77,7 +76,6 @@ class {{capPlural}}Controller extends Controller
     {
         ${{smallSingle}} = {{capSingle}}::findOrFail($id);
         ${{smallSingle}}->update($request->all());
-        flash()->success('{{capSingle}} has been updated successfully.');
         return redirect('{{smallPlural}}');
     }
 
@@ -91,7 +89,6 @@ class {{capPlural}}Controller extends Controller
     {
         ${{smallSingle}} = {{capSingle}}::findOrFail($id);
         ${{smallSingle}}->delete();
-        flash()->success('{{capSingle}} has been deleted successfully.');
         return redirect('{{smallPlural}}');
     }
 }

@@ -1,9 +1,9 @@
 {
-    "name": "amcysoft/scaffold",
+    "name": "tisstech-brasil/scaffold",
     "description": "Laravel 5 scaffold with bootstrap 3 template",
-    "keywords": ["amcysoft", "scaffold", "laravel 5", "generators"],
+    "keywords": ["tisstech-brasil", "scaffold", "laravel 5", "generators"],
     "type": "laravel-scaffold",
-    "homepage": "https://github.com/amcysoft/scaffold",
+    "homepage": "https://github.com/tisstech-brasil/scaffold",
     "require": {
         "php": ">=5.5.9",
         "laravelcollective/html": "5.2.*",
@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Amcysoft\\Scaffold\\": "src/"
+            "TisstechBrasil\\Scaffold\\": "src/"
         }
     },
     "authors": [
@@ -19,7 +19,12 @@
             "name": "Raheel",
             "email": "raheel@amcysoft.com",
             "homepage": "https://www.amcysoft.com"
-        }
+        },
+        {
+            "name": "Deyvison Rocha",
+            "email": "deyvison@gmail.com",
+            "homepage": "http://deyvisonrocha.com"
+        },
     ],
     "minimum-stability": "dev"
 }

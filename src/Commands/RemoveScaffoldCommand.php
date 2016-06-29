@@ -1,6 +1,6 @@
 <?php
 
-namespace Amcysoft\Scaffold\Commands;
+namespace TisstechBrasil\Scaffold\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
@@ -58,12 +58,12 @@ class RemoveScaffoldCommand extends Command
 
         $this->info("Rolling back migration ...");
         \Artisan::call('migrate:rollback');
-        
+
         $this->info("Removing Schema ...");
         $res = glob("database/migrations/*_create_".$this->models."_table.php");
         if(count($res) > 0)
             unlink($res[0]);
-        
+
         $this->info("Removing Controller ...");
         if(file_exists('app/Http/Controllers/' . $this->Models . 'Controller.php'))
             unlink('app/Http/Controllers/' . $this->Models . 'Controller.php');
