@@ -69,8 +69,12 @@ class RemoveScaffoldCommand extends Command
             unlink('app/Http/Controllers/' . $this->Models . 'Controller.php');
 
         $this->info("Removing Model ...");
-        if(file_exists('app/' . $this->Model . '.php'))
-            unlink('app/' . $this->Model . '.php');
+        if(file_exists('app/Models/' . $this->Model . '.php'))
+            unlink('app/Models/' . $this->Model . '.php');
+
+        $this->info("Removing Request ...");
+        if(file_exists('app/Http/Requests/' . $this->Model . 'Request.php'))
+            unlink('app/Http/Requests/' . $this->Model . 'Request.php');
 
         $this->info("Removing Views ...");
         $p = 'resources/views/' . $this->models;
