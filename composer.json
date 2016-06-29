@@ -24,7 +24,7 @@
             "name": "Deyvison Rocha",
             "email": "deyvison@gmail.com",
             "homepage": "http://deyvisonrocha.com"
-        },
+        }
     ],
     "minimum-stability": "dev"
 }
